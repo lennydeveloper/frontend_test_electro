@@ -59,7 +59,7 @@ export default {
     ModalComponent
   },
   beforeCreate() {
-    axios.get('http://127.0.0.1:3000/random-photos?topics=xHxYTMHLgOc,xjPR4hlkBGA')
+    axios.get('https://back-test-electro.herokuapp.com/random-photos?topics=xHxYTMHLgOc,xjPR4hlkBGA')
       .then(response => {
         this.photos = response.data;
       }).catch(err => {
@@ -70,7 +70,7 @@ export default {
   methods: {
     searchPhotos(value) {
       this.search = value;
-      axios.get(`http://127.0.0.1:3000/api/search/photos?search=${this.search}&page=1`)
+      axios.get(`https://back-test-electro.herokuapp.com/api/search/photos?search=${this.search}&page=1`)
         .then(response => {
           this.photos = response.data.results;
         }).catch(err => {
@@ -83,7 +83,7 @@ export default {
       this.showModal = true;
     },
     likePhotoAction() {
-      axios.get(`http://127.0.0.1:3000/api/photos/like?id=${this.image_id}`)
+      axios.get(`https://back-test-electro.herokuapp.com/api/photos/like?id=${this.image_id}`)
         .then(response => {
           if (response.status == 200) {
             alert('La imagen ha sido marcada como favorita');

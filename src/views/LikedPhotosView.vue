@@ -38,7 +38,7 @@ export default {
         ImageCard
     },
     beforeCreate() {
-        axios.get('http://127.0.0.1:3000/api/user/likes')
+        axios.get('https://back-test-electro.herokuapp.com/api/user/likes')
             .then(response => {
                 this.photos = response.data;
             }).catch(err => {
