@@ -1,16 +1,27 @@
 <template>
-  <div id="app">
+  <div id="app" class="antialised">
     <nav>
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/favorites">Favorites</router-link>
     </nav>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
+<script>
+import HomeView from './views/HomeView.vue'
+import LikedPhotosView from './views/LikedPhotosView.vue'
+export default {
+  name: 'app',
+  components: {
+    HomeView,
+    LikedPhotosView
+  },
+}
+</script>
+
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
